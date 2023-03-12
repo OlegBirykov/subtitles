@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FilesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('upload');
+});
+//Route::post('/', [FilesController::class, 'send'])->name('send');
+
+Route::get('/convert', function () {
+    return view('convert');
+});
+
+Route::get('/download', function () {
+    return view('download');
+});
+
+Route::get('/clear', function () {
+    return view('clear');
 });
